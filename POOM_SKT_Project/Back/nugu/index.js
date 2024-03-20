@@ -6,7 +6,7 @@ const axios = require('axios');
 const express = require('express');
 const app = express();
 
-const SERVER_URL = 'http://localhost'; // 서버 주소를 변수로 선언
+const SERVER_URL = 'URL'; // 서버 주소를 변수로 선언
 const PORT_3001 = '3001'; // 포트 3001을 변수로 선언
 const PORT_4000 = '4000'; // 포트 4000을 변수로 선언
 
