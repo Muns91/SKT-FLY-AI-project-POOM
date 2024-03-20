@@ -10,7 +10,7 @@ const { v4: uuidv4 } = require('uuid');
 const app = express();
 const port = 4000;
 
-const wishlistBackendBaseUrl = 'http://172.23.148.29:3001';
+const wishlistBackendBaseUrl = 'URL';
 
 app.use(express.json());
 app.use(cors());
@@ -42,7 +42,7 @@ app.post('/wishlist', async (req, res) => {
     return res.status(400).send('Unexpected request format');
   }
 
-  const apiKey = 'a178a808dd5fc6cad1e3befcfc1ed009'; // 11번가 API 키를 여기에 입력하세요.
+  const apiKey = 'Your API KEY'; // 11번가 API 키를 여기에 입력하세요.
   try {
     const response = await axios.get(`http://openapi.11st.co.kr/openapi/OpenApiService.tmall?key=${apiKey}&apiCode=ProductSearch&keyword=${encodeURIComponent(keyword)}&option=Categories`, {responseType: 'arraybuffer'});
     console.log('Received response from 11st API');
@@ -64,7 +64,7 @@ app.post('/wishlist', async (req, res) => {
           detailUrl: product.DetailPageUrl,
         };
 
-        const wishlistBackendUrl = 'http://172.23.148.29:3001/wishlist';
+        const wishlistBackendUrl = 'URL/wishlist';
         const wishlistResponse = await axios.post(wishlistBackendUrl, formattedProduct);
         console.log('Product sent to wishlist backend:', wishlistResponse.data);
 
@@ -92,7 +92,7 @@ app.post('/send-message', (req, res) => {
   const postData = JSON.stringify(message);
 
   const options = {
-    hostname: '172.23.148.29',
+    hostname: 'URL',
     port: 3001,
     path: '/receive-message',
     method: 'POST',
